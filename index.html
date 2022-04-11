@@ -1,0 +1,106 @@
+<!doctype html>
+    <head>  
+        <title>실습페이지</title>
+        <meta charset="utf-8"> 
+        <style>
+            h1{
+                border-bottom: 10px solid #e8b5ff;
+                padding:30px;
+                margin-bottom: 0;
+            }
+            h1 a{
+                text-decoration: none;
+            }
+            ol{
+                margin-top: 0;
+            }
+            
+            /* 사이즈에 따른 조절(반응형) */
+            @media all and (min-width: 480px) {
+                #container{
+                display:grid;
+                grid-template-columns: 150px 1fr;
+                }
+                ol{
+                    border-right:10px solid pink;
+                }
+             }
+            
+        </style>
+    </head>
+    
+    <body>
+        <script>
+            console.log(this); //여기서의 this는 이 파일 전체를 가리킴
+        </script>
+        <input type="button" onclick="console.log(this);" value="1"> <!-- 여기서의 this는 1번 버튼을 가리킴 -->
+        <input type="button" onclick="console.log(this);" value="2">
+        <input type="button" value="night" 
+            onclick="
+                //만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고,
+                if(this.value==='night'){
+                    document.querySelector('body').style.backgroundColor = 'black';
+                    document.querySelector('body').style.color = 'white';
+                    this.value = 'day';
+                }else {
+                    //아니라면 아래 코드가 실행된다.
+                    document.querySelector('body').style.backgroundColor = 'white';
+                    document.querySelector('body').style.color = 'black';
+                    this.value = 'night';
+                }
+                
+            "
+        >
+
+
+        <!-- <input type="button" value="night" 
+            onclick="
+                document.querySelector('body').style.backgroundColor = 'black';
+                document.querySelector('body').style.color = 'white';
+            "
+        >
+        <input type="button" value="day" 
+            onclick="
+                document.querySelector('body').style.backgroundColor = 'white';
+                document.querySelector('body').style.color = 'black';
+            "
+        >  -->
+
+        <h1><a href="index.html">WEB</a></h1>  
+        
+        <img width="150" src="https://images.unsplash.com/photo-1648929193032-ce6babd2a15e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80">
+    
+        <div id="container">
+            <ol>
+                <li><a href="1.html">html</li>
+                <li><a href="2.html">css</li>
+                <li><a href="3.html">javascript</li>
+            </ol>
+            <div>
+                <h2>Welcome</h2>
+                Hello, WEB!!
+            </div>
+        </div>
+    
+        <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://elice-sw2.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </body>
+</html>
