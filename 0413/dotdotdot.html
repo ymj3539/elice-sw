@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            #expand{
+                display:none;
+
+            }
+        </style>
+    </head>
+    <body>
+        javascript is <span 
+            style="
+                background-color: rgb(186, 186, 186);
+                padding: 0 5px;
+                cursor : pointer;
+            "
+            onclick="
+                document.querySelector('#hidden').style.display='inline';
+                this.style.display = 'none';
+            ">...</span> 
+            <span id="hidden" style="display:none;">a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.</span>
+
+            <hr>
+
+        javascript is <span 
+            style="
+                background-color: rgb(186, 186, 186);
+                padding: 0 5px;
+                cursor : pointer;
+            "
+            onclick="
+                this.style.display = 'none';
+                document.querySelector('#content').innerHTML = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit eos esse ea ab modi incidunt magni maiores, in id, suscipit earum, voluptates repellat rem corrupti quis at fugiat ducimus odio.`; 
+            ">...</span> 
+            <span id = "content"></span>
+            
+    </body>
+
+
+</html>
