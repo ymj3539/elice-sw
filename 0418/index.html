@@ -4,12 +4,17 @@
         <script>
             let topics = [
                 {id:1,title:'html',body:'html is ..'}, 
-                {id:2, title:'css', body:'css is ..'}
+                {id:2, title:'css', body:'css is ..'},
+                //여기에 배열만 추가하면 얼마든지 페이지에 똑같이 적용할 수 있다.
+                {id:3, title:'javascript', body:'javascipt is ..'}
             ]
         </script>
     </head>
     <body>
-        <h1><a href="index.html">WEB</a></h1>
+        <h1><a href="index.html" onclick="
+            event.preventDefault();
+            document.querySelector('article').innerHTML = `<h2>Welcome</h2>Hello, Web!`;
+            ">WEB</a></h1>
         <nav>
             <ol></ol>
         </nav>
