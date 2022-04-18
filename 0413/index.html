@@ -27,61 +27,46 @@
             }
             
         </style>
-    </head>
-    <body>
-        <input type="button" onclick="console.log(this);" value="1">
-        <input type="button" onclick="console.log(this);" value="2">
         <script>
             function night(){
                 document.querySelector('body').style.backgroundColor = 'black';
-                    document.querySelector('body').style.color = 'white';
-                    //a태그의 글자색도 white로 바꾸기
-                    let as = document.querySelectorAll('a');
-                    for(let i=0; i<as.length; i=i+1){
-                        as[i].style.color='white';
-                    }
+                document.querySelector('body').style.color = 'white';
+                let as = document.querySelectorAll('a');
+                for(let i=0; i<as.length; i=i+1){
+                    as[i].style.color='white';
+                }
             }
-
-            function day() {
+            function day(){
                 document.querySelector('body').style.backgroundColor = 'white';
-                    document.querySelector('body').style.color = 'black';
-                    
-                    //a태그의 글자색도 black으로 바꾸기
-                    let as = document.querySelectorAll('a');
-                    for(let i=0; i<as.length; i=i+1){
-                        as[i].style.color='black';
-                    }
+                document.querySelector('body').style.color = 'black';
+                let as = document.querySelectorAll('a');
+                for(let i=0; i<as.length; i=i+1){
+                    as[i].style.color='black';
+                } 
+            }
+            function dayNight(mode){
+                if(mode === 'night'){
+                    night();
+                } else {
+                    day();
+                }
             }
         </script>
+    </head>
+    <body>
         <input type="button" value="night" 
             onclick="
-                // (다크모드)만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
+                // 만약에 이 버튼의 value 값이 night라면 아래 코드가 실행되고, 
                 if(this.value === 'night'){
-                    night();
-                    // 이 버튼의 value값을 day로 변경한다. 
+                    dayNight('night');
                     this.value = 'day';
                 } else {
-                    // (라이트모드) 아니라면 아래 코드가 실행된다. 
-                    day();
-                    // 이 버튼의 value값을 night로 변경한다. 
+                    // 아니라면 아래 코드가 실행된다. 
+                    dayNight('day');
                     this.value = 'night';
-                    
                 }
             "
         >
-<!--         
-        <input type="button" value="night" 
-            onclick="
-                document.querySelector('body').style.backgroundColor = 'black';
-                document.querySelector('body').style.color = 'white';
-            "
-        >
-        <input type="button" value="day" 
-            onclick="
-                document.querySelector('body').style.backgroundColor = 'white';
-                document.querySelector('body').style.color = 'black';
-            "
-        > -->
         <h1><a href="index.html">WEB</a></h1>
 
         <div id="container">
