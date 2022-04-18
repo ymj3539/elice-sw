@@ -20,14 +20,13 @@
         <h2>Welcome</h2>
         Hello, WEB
         <script>
-            function nav(){
+            let nav = ()=>{
                 let navTag = ' ';
                 for(let i = 0; i<topics.length; i=i+1){
                     navTag = navTag + `<li><a href="/read/${topics[i].id}">${topics[i].title}</a></li>`;
                 }
                 document.querySelector('nav ol').innerHTML = navTag;
                 console.log(navTag);
-
             }
             
         </script>
