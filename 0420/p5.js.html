@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    </head>
+    <body>
+        <h1>WEB</h1>
+        <style>
+            h1{
+                font-size: 100;
+            }
+            main{
+                position : absolute;
+                top:0;
+                left:0;
+                z-index: -1; 
+                /* 텍스트 WEB을 맨위로 올라오게 할 수 있음 */
+            }
+            
+        </style>
+        <script>
+            function setup() {
+                console.log('setup')
+                createCanvas(windowWidth, windowHeight); //내 화면 사이트에 맞춤
+				//background(0); //배경색
+                //circle(100, 100, 100); //원 그리기
+                //circle(200, 200,50);
+            }
+
+            function draw() {
+                console.log('draw')
+                noStroke(); //테두리가 없어짐
+                fill(100, 100) //fill 뒤에 나오는 도형의 색깔이 100이 됨
+                circle(mouseX, mouseY, Math.random()*50); //mouseX : p5js가 제공하는 변수(위치를 마우스 위치로 설정)
+            }
+        </script>
+    </body>
+</html>
