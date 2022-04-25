@@ -77,12 +77,22 @@
                 e.preventDefault();
                 const t = e.target.title.value;
                 const b = e.target.body.value;
-                const newTopic = {id:nextId, title:t, body:b};
-                topics.push(newTopic);
-                nav();
-                selectedId = nextId;
-                nextId = nextId + 1;
-                read();
+                fetch('http://localhost:3000/topics', {
+                    method:'POST',
+                    //내가 보내는 text는 json이니까 거기에 맞춰 파싱해서 서버를 변경해~!
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    // stringify를 쓰면 객체가 JSON타입의 문자열로 바뀐다. id는 nextid할 필요없이 json 서버가 알아서 증가시켜줌
+                    body: JSON.stringify({title:t, body:b})
+                })
+                    .then(response=>response.json())
+                    .then(data=>{
+                        console.log(data);
+                        nav();
+                        selectedId = data.id;
+                        read();
+                    })
             }
             function create(){
                 const content = `
