@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+//주소를 차는 것을 routing.
 var usersRouter = require('./routes/users');
-var testRouter = require('./routes/call');
+const testRouter = require('./routes/call');
+const postRouter = require('./routes/post');
+const dbconnect = require('./models/index');
+dbconnect();
 
 var app = express();
 
@@ -23,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/test', testRouter);
+//localhost:3000/expost
+app.use('/expost', postRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
